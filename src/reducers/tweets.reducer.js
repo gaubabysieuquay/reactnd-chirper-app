@@ -1,4 +1,8 @@
-import { RECEIVE_TWEETS, TOGGLE_TWEET } from '../actions/tweets.action';
+import {
+  ADD_TWEET,
+  RECEIVE_TWEETS,
+  TOGGLE_TWEET,
+} from '../actions/tweets.action';
 
 export default function tweets(state = {}, action) {
   switch (action.type) {
@@ -17,6 +21,24 @@ export default function tweets(state = {}, action) {
               ? state[action.id].likes.filter((uid) => uid !== action.authUser)
               : state[action.id].likes.concat([action.authUser]),
         },
+      };
+    case ADD_TWEET:
+      const { tweet } = action;
+
+      let replyingTo = {};
+      if (tweet.replyingTo !== null) {
+        replyingTo = {
+          [tweet.replyingTo]: {
+            ...state[tweet.replyingTo],
+            replies: state[tweet.replyingTo].replies.concat([tweet.id]),
+          },
+        };
+      }
+
+      return {
+        ...state,
+        [action.tweet.id]: action.tweet,
+        ...replyingTo,
       };
     default:
       return state;
