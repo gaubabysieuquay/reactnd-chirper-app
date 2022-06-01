@@ -2250,6 +2250,7 @@ __metadata:
     react-dom: ^16.2.0
     react-icons: ^4.4.0
     react-redux: ^8.0.2
+    react-redux-loading: ^4.6.1
     react-scripts: 1.1.1
     redux: ^4.2.0
     redux-thunk: ^2.4.1
@@ -9038,6 +9039,28 @@ __metadata:
   version: 18.1.0
   resolution: "react-is@npm:18.1.0"
   checksum: d206a0fe6790851bff168727bfb896de02c5591695afb0c441163e8630136a3e13ee1a7ddd59fdccddcc93968b4721ae112c10f790b194b03b35a3dc13a355ef
+  languageName: node
+  linkType: hard
+
+"react-lifecycles-compat@npm:^3.0.2":
+  version: 3.0.4
+  resolution: "react-lifecycles-compat@npm:3.0.4"
+  checksum: a904b0fc0a8eeb15a148c9feb7bc17cec7ef96e71188280061fc340043fd6d8ee3ff233381f0e8f95c1cf926210b2c4a31f38182c8f35ac55057e453d6df204f
+  languageName: node
+  linkType: hard
+
+"react-redux-loading@npm:^4.6.1":
+  version: 4.6.1
+  resolution: "react-redux-loading@npm:4.6.1"
+  dependencies:
+    prop-types: ^15.6.2
+    react-lifecycles-compat: ^3.0.2
+  peerDependencies:
+    react: ^0.14.0 || ^15.0.0 || ^16.0.0
+    react-dom: ^0.14.0 || ^15.0.0 || ^16.0.0
+    react-redux: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+    redux: ^3.0.0 || ^4.0.0
+  checksum: d0e7579aa19187e278a1fa67c07b2ac3aa306472e48c0a0206845ea94cbb7e7fdf159d916575b37679cd700750438fd6058f3db13949dddcb4befecf7d81b5ab
   languageName: node
   linkType: hard
 

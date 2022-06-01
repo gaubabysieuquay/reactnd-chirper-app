@@ -1,15 +1,25 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   TiArrowBackOutline,
   TiHeartOutline,
   TiHeartFullOutline,
-} from "react-icons/ti/index";
-import { connect } from "react-redux";
-import { formatDate, formatTweet } from "../utils/helpers";
+} from 'react-icons/ti/index';
+import { connect } from 'react-redux';
+import { handleToggleTweet } from '../actions/tweets.action';
+import { formatDate, formatTweet } from '../utils/helpers';
 class Tweet extends Component {
   handleLike = (e) => {
     e.preventDefault();
-    // TODO: Handle like button
+
+    const { dispatch, tweet, authUser } = this.props;
+
+    dispatch(
+      handleToggleTweet({
+        id: tweet.id,
+        hasLiked: tweet.hasLiked,
+        authUser,
+      })
+    );
   };
 
   toParent = (e, id) => {
