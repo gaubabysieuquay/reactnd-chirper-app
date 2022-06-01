@@ -7,13 +7,13 @@ class Dashboard extends Component {
     return (
       <div>
         <h3 className="center">Your Timeline</h3>
-        <ui className="dashboard-list">
+        <ul className="dashboard-list">
           {this.props.tweetIds.map((id) => (
             <li key={id}>
               <Tweet id={id} />
             </li>
           ))}
-        </ui>
+        </ul>
       </div>
     );
   }
